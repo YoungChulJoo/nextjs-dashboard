@@ -48,6 +48,11 @@ export async function fetchLatestInvoices() {
       ...invoice,
       amount: formatCurrency(invoice.amount),
     }));
+    
+    console.log('Fetching LatestInvoices data...');
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log('Data fetch completed after 2 seconds.');
+
     return latestInvoices;
   } catch (error) {
     console.error('Database Error:', error);
